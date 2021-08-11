@@ -8,26 +8,24 @@
 
 import UIKit
 
-class SegmentioCell: UICollectionViewCell {
+public class SegmentioCell: UICollectionViewCell {
     
     let padding: CGFloat = 8
     static let segmentTitleLabelHeight: CGFloat = 22
     
-    var verticalSeparatorView: UIView?
-    var segmentTitleLabel: UILabel?
-    var segmentImageView: UIImageView?
-    var containerView: UIView?
-    var imageContainerView: UIView?
+    public var verticalSeparatorView: UIView?
+    public var segmentTitleLabel: UILabel?
+    public var segmentImageView: UIImageView?
+    public var containerView: UIView?
+    public var imageContainerView: UIView?
+    public var topConstraint: NSLayoutConstraint?
+    public var bottomConstraint: NSLayoutConstraint?
+    public var cellSelected = false
+    public var options = SegmentioOptions()
+    public var style = SegmentioStyle.imageOverLabel
+    let verticalSeparatorLayer = CAShapeLayer()
     
-    var topConstraint: NSLayoutConstraint?
-    var bottomConstraint: NSLayoutConstraint?
-    var cellSelected = false
-    
-    private var options = SegmentioOptions()
-    private var style = SegmentioStyle.imageOverLabel
-    private let verticalSeparatorLayer = CAShapeLayer()
-    
-    override var isHighlighted: Bool {
+    public override var isHighlighted: Bool {
         get {
             return super.isHighlighted
         }
@@ -95,7 +93,7 @@ class SegmentioCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func prepareForReuse() {
+    public override func prepareForReuse() {
         verticalSeparatorLayer.removeFromSuperlayer()
         super.prepareForReuse()
         
