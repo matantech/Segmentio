@@ -38,26 +38,24 @@ open class Segmentio: UIView {
     }
 
     open private(set) var segmentioItems = [SegmentioItem]()
-    var segmentioCollectionView: UICollectionView?
-    var segmentioOptions = SegmentioOptions()
-    var segmentioStyle = SegmentioStyle.imageOverLabel
-    var isPerformingScrollAnimation = false
-    var isCollectionViewScrolling = false
-    var didScrollToSelectedItem = false
-    
-    var topSeparatorView: UIView?
-    var bottomSeparatorView: UIView?
-    var indicatorLayer: CAShapeLayer?
-    var selectedLayer: CAShapeLayer?
-    
-    var isRTL: Bool {
+    public var segmentioCollectionView: UICollectionView?
+    public var segmentioOptions = SegmentioOptions()
+    public var segmentioStyle = SegmentioStyle.imageOverLabel
+    public var isPerformingScrollAnimation = false
+    public var isCollectionViewScrolling = false
+    public var didScrollToSelectedItem = false
+    public var topSeparatorView: UIView?
+    public var bottomSeparatorView: UIView?
+    public var indicatorLayer: CAShapeLayer?
+    public var selectedLayer: CAShapeLayer?
+    public var isRTL: Bool {
         if #available(iOS 9.0, *) {
             return UIView.userInterfaceLayoutDirection(for: semanticContentAttribute) == .rightToLeft
         } else {
             return UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft
         }
     }
-    var isFlipped = false
+    public var isFlipped = false
     
     // MARK: - Lifecycle
     
