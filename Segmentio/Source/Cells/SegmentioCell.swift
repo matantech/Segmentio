@@ -39,12 +39,7 @@ public class SegmentioCell: UICollectionViewCell {
                 let selectedState = options.states.selectedState
                 
                 if style.isWithText() {
-                    let highlightedTitleTextColor = cellSelected ? selectedState.titleTextColor
-                        : defaultState.titleTextColor
                     let highlightedTitleFont = cellSelected ? selectedState.titleFont : defaultState.titleFont
-                    
-                    segmentTitleLabel?.textColor = isHighlighted ? highlightedState.titleTextColor
-                        : highlightedTitleTextColor
                     segmentTitleLabel?.font = isHighlighted ? highlightedState.titleFont : highlightedTitleFont
                 }
                 
@@ -137,7 +132,6 @@ public class SegmentioCell: UICollectionViewCell {
         let defaultState = options.states.defaultState
         
         if style.isWithText() {
-            segmentTitleLabel?.textColor = selected ? selectedState.titleTextColor : defaultState.titleTextColor
             segmentTitleLabel?.font = selected ? selectedState.titleFont : defaultState.titleFont
             segmentTitleLabel?.alpha = selected ? selectedState.titleAlpha : defaultState.titleAlpha
             segmentTitleLabel?.minimumScaleFactor = 0.5
@@ -290,7 +284,6 @@ public class SegmentioCell: UICollectionViewCell {
             segmentTitleLabel?.textAlignment = options.labelTextAlignment
             segmentTitleLabel?.numberOfLines = options.labelTextNumberOfLines
             let defaultState = options.states.defaultState
-            segmentTitleLabel?.textColor = defaultState.titleTextColor
             segmentTitleLabel?.font = defaultState.titleFont
             segmentTitleLabel?.text = content.title
             segmentTitleLabel?.minimumScaleFactor = 0.5
